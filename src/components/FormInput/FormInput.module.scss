@@ -1,0 +1,141 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.form__row {
+  max-width: 32.2rem;
+  height: 5.2rem;
+  text-align: left;
+}
+
+.form__row-name {
+  display: inline;
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0 0.6rem;
+  background-color: $color-secondary;
+  line-height: 2.1rem;
+}
+
+.form__input {
+  width: 32rem;
+  height: 4rem;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  outline: 1px solid $color-disabled;
+  border: none;
+  background: $color-secondary;
+  padding: 0 4.4rem 0 1.4rem;
+  color: $color-disabled;
+
+  &:focus {
+    background-color: $color-secondary;
+    color: $color-black;
+  }
+}
+
+.name-container {
+  margin-top: -1rem;
+  position: relative;
+  top: 1.05rem;
+  left: 1.1rem;
+  z-index: 5;
+}
+
+.error {
+  margin: 0;
+  padding-top: 0.6rem;
+  min-width: 1.2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: $color-error;
+}
+
+.check-image {
+  width: 2rem;
+  height: 2rem;
+  color: $color-success;
+  position: absolute;
+  align-self: center;
+  background-color: $color-secondary;
+}
+
+.eye-image {
+  position: absolute;
+  display: inline;
+  z-index: 5;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.eye-container {
+  position: relative;
+  left: 27.6rem;
+  bottom: 4rem;
+}
+
+.red {
+  color: $color-error;
+}
+
+.green {
+  color: $color-success;
+}
+
+.black {
+  color: $color-black;
+}
+
+.border_red {
+  outline-color: $color-error;
+}
+
+.border_disabled {
+  outline-color: $color-disabled;
+}
+
+.border_black {
+  outline-color: $color-black;
+}
+
+.email_padding {
+  padding-right: 1.4rem;
+}
+
+@media (max-width: 1023px) {
+  .form__row {
+    width: 100%;
+  }
+  .form__input {
+    width: 99.4%;
+  }
+}
+
+@media (max-width: 767px) {
+  .form__input {
+    font-weight: 500;
+  }
+
+  .form__input {
+    min-width: 24.8rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .form__row {
+    min-width: 25rem;
+  }
+  .eye-container {
+    left: 84%;
+  }
+}
+
+@media (max-width: 320px) {
+  .form__row {
+    width: 25rem;
+  }
+  .eye-container {
+    left: 20.6rem;
+  }
+}

@@ -1,0 +1,77 @@
+@mixin font($size, $height: $size, $weight: normal, $style: normal) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin text-link($font-weight: bold, $heightBackground: 50%) {
+  color: $color-black;
+  font-weight: $font-weight;
+  text-decoration: none;
+  position: relative;
+  transition: height 0.3s ease;
+  z-index: 2;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: $color-accent-light;
+    width: 106%;
+    height: $heightBackground;
+    bottom: -0.3rem;
+    left: -0.3rem;
+    border-radius: 0.2rem;
+    transition: height 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:before {
+      height: 115%;
+    }
+  }
+}
+
+@mixin welcome-page-container {
+  display: flex;
+  padding: 3.5rem 3rem 3rem 4rem;
+  background: $color-secondary;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 2.5rem 2.5rem -0.9rem rgba(83, 83, 109, 0.11);
+
+  h3 {
+    margin: 0 0 1.5rem 0;
+  }
+
+  p {
+    @include font(1.5rem, 150%);
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 2rem 2.5rem 3rem;
+  }
+}
+
+@mixin graphiql-btn($marginBottom: 0) {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: $marginBottom;
+  outline: 1px solid transparent;
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 1.5px $color-black;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}

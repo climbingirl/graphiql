@@ -1,0 +1,30 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  @include welcome-page-container;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 18rem;
+    height: 14.5rem;
+    background: url('../../assets/images/tape-read-to-find-out-more.svg')
+      no-repeat;
+    top: 1.5rem;
+    right: 3.5rem;
+  }
+
+  a {
+    @include text-link;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    &::before {
+      display: none;
+    }
+  }
+}

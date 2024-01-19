@@ -1,0 +1,8 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/vars.scss';
+
+.pages_link {
+  @include font(1.5rem);
+  @include text-link;
+  text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+.editor_json {
+  width: 50%;
+
+  & > div {
+    height: 60rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor_json {
+    width: 100%;
+
+    & > div {
+      height: 34rem;
+    }
+  }
+}

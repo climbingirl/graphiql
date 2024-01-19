@@ -1,0 +1,76 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  @include welcome-page-container;
+  align-items: center;
+  margin: 5rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 40.8rem;
+    height: 33.9rem;
+    background: url('../../assets/images/graph-img.svg') no-repeat;
+    top: 0;
+    right: 0;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.rss-logo {
+  position: relative;
+  margin: 3rem 0;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 22.5rem;
+    height: 8.6rem;
+    background: url('../../assets/images/tape-link-to-school.svg') no-repeat;
+    top: -3rem;
+    left: 1.5rem;
+    z-index: -1;
+  }
+}
+
+.image {
+  z-index: 0;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    position: relative;
+    margin: 3rem 0;
+  }
+
+  .image {
+    position: absolute;
+    width: 9rem;
+    bottom: 1.5rem;
+    right: 2.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .image {
+    width: 5.8rem;
+    right: 1.5rem;
+    z-index: 2;
+  }
+}

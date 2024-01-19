@@ -1,0 +1,10 @@
+.query {
+  margin: 7px 0 0 22px;
+}
+
+@media (max-width: 1199px) {
+  .query {
+    margin: 7px 0 0;
+    text-align: center;
+  }
+}

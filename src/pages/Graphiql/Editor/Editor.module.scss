@@ -1,0 +1,67 @@
+@import '../../../styles/vars.scss';
+@import '../../../styles/mixins.scss';
+
+.editor_gql {
+  width: 50%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.editor_inner {
+  display: flex;
+  width: 100%;
+}
+
+.codemirror_editor {
+  flex-grow: 1;
+  overflow: hidden;
+
+  & > div {
+    height: 56rem;
+    transition: 0.3s ease;
+  }
+
+  &.shrink {
+    & > div {
+      height: 40rem;
+    }
+  }
+}
+
+.tooll_bar {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: $color-secondary;
+  border-left: 2px solid $color-background;
+
+  button {
+    @include graphiql-btn;
+
+    &:first-child {
+      @include graphiql-btn(1.5rem);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .editor_gql {
+    width: 100%;
+  }
+
+  .codemirror_editor {
+    & > div {
+      height: 30rem;
+    }
+
+    &.shrink {
+      & > div {
+        height: 30rem;
+      }
+    }
+  }
+}

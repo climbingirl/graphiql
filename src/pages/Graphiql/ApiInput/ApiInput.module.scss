@@ -1,0 +1,24 @@
+@import '../../../styles/vars.scss';
+
+.input_form {
+  display: flex;
+  max-width: 50rem;
+  margin: 0 auto 4rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  border: 1px solid $color-disabled;
+  background-color: $color-secondary;
+  font-size: 1.5rem;
+}
+
+.input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 0 1.6rem;
+  width: 50%;
+
+  &::placeholder {
+    color: #e1e1e1;
+  }
+}

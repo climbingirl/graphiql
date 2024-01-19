@@ -1,0 +1,105 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.form {
+  width: 80rem;
+  background-color: $color-secondary;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  font-size: 1.8rem;
+  padding: 5rem 0 7.5rem 1.8rem;
+  position: relative;
+  box-shadow: 0px 25px 25px -9px rgba(83, 83, 109, 0.11);
+  border-radius: 0.5rem;
+  z-index: 2;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    background-color: $color-secondary;
+    background-image: url('../../assets/images/grahh-img.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+    height: 33.9rem;
+    width: 40.8rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 49%;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    background-color: $color-accent-light;
+    height: 2rem;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+.button_submit {
+  width: 32.2rem;
+  height: 4rem;
+  padding: 0 2rem;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  @include font(1.5rem);
+  color: $color-secondary;
+  background-color: $color-black;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-gray-additional;
+    box-shadow: 0 0 0 2px $color-gray-additional;
+  }
+
+  &:disabled {
+    color: $color-disabled;
+    background-color: $color-light-gray-additional;
+    outline: 1px solid $color-disabled;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+@media (max-width: 1023px) {
+  .form {
+    max-width: 100%;
+  }
+
+  .button_submit {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .form {
+    min-width: 28rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .form {
+    padding: 4rem 2rem 7.5rem 2rem;
+  }
+
+  .button_submit {
+    min-width: 25rem;
+  }
+}

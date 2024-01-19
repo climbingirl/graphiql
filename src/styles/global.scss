@@ -1,0 +1,92 @@
+@import 'normalize';
+@import 'placeholders';
+@import 'mixins';
+@import 'vars';
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  font-size: 1.6rem;
+  background: $color-background;
+  @extend %font-prom;
+
+  img,
+  button {
+    user-select: none;
+  }
+
+  ::selection {
+    background-color: $color-accent-light;
+    color: $color-black;
+    border-radius: 50px;
+    opacity: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+  @include font(6rem, 130%, $weight: bold);
+}
+
+h2 {
+  @include font(4.8rem, $weight: bold);
+}
+
+h3 {
+  @include font(3.6rem, $weight: bold);
+}
+
+h4 {
+  @include font(2.4rem, $weight: bold);
+}
+
+h5 {
+  @include font(1.8rem, $weight: bold);
+}
+
+h6 {
+  @include font(1.5rem, $weight: bold);
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px $color-secondary inset !important;
+}
+
+.toast {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .toast {
+    max-width: 40rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .toast {
+    max-width: 30rem;
+    font-size: 1.1rem;
+  }
+}

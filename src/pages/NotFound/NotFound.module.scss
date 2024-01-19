@@ -1,0 +1,88 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem 7rem;
+  max-width: 119.2rem;
+  margin: 6rem auto 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  p {
+    @include font(1.8rem, 130%, bold);
+    max-width: 33rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+}
+
+.image {
+  position: relative;
+  margin-bottom: 7rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 29%;
+    background: url('../../assets/images/graphiql-logo.svg') no-repeat;
+    width: 30rem;
+    height: 30rem;
+    animation: rotate 9s linear infinite;
+    transform-origin: center center;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color-accent-light;
+    width: 115rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    z-index: -2;
+    box-shadow: 0 2.5rem 2.5rem -0.9rem rgba(83, 83, 109, 0.11);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: 3rem auto 0;
+  }
+
+  .image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    &::before {
+      width: 42%;
+      height: 100%;
+      background-size: 42% 42%;
+      background-size: contain;
+    }
+
+    &::after {
+      height: 70%;
+    }
+  }
+}
